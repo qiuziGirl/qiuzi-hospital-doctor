@@ -42,6 +42,19 @@ export const constantRoutes = [
         meta: { title: 'Appointment', icon: 'appointment' }
       }
     ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/record',
+    children: [
+      {
+        path: 'record',
+        name: 'Record',
+        component: () => import('@/views/record'),
+        meta: { title: 'Record', icon: 'record' }
+      }
+    ]
   }
 ]
 
