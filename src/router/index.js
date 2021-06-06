@@ -21,12 +21,27 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard'),
+        meta: { title: 'Dashboard', icon: 'dashboard' }
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/appointment',
+    children: [
+      {
+        path: 'appointment',
+        name: 'Appointment',
+        component: () => import('@/views/appointment'),
+        meta: { title: 'Appointment', icon: 'appointment' }
+      }
+    ]
   }
 ]
 
