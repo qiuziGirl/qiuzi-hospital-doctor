@@ -9,13 +9,13 @@
         :background-color="variables.menuBackgroundColor"
         :text-color="variables.menuText"
         :unique-opened="false"
-        :active-text-color="variables.menuActiveText"
+        :active-text-color="variables.menuActiveTextColor"
         :collapse-transition="false"
         mode="vertical"
       >
         <sidebar-item
-          v-for="route in permission_routes"
-          :key="route.path"
+          v-for="(route, index) in permission_routes"
+          :key="index"
           :item="route"
           :base-path="route.path"
         />
