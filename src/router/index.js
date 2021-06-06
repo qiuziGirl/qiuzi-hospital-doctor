@@ -13,6 +13,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/404',
+    component: () => import('@/views/error/error404'),
+    hidden: true
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -25,7 +30,10 @@ export const constantRoutes = [
   }
 ]
 
-export const asyncRoutes = []
+export const asyncRoutes = [
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
+]
 
 const createRouter = () => new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
