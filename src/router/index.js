@@ -40,6 +40,13 @@ export const constantRoutes = [
         name: 'Appointment',
         component: () => import('@/views/appointment'),
         meta: { title: 'Appointment', icon: 'appointment' }
+      },
+      {
+        path: 'patient-profile/:id(\\d+)',
+        name: 'PatientProfile',
+        component: () => import('@/views/patientProfile'),
+        meta: { title: 'Patient Profile', noCache: true },
+        hidden: true
       }
     ]
   },
