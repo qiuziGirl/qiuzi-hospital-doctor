@@ -60,6 +60,27 @@ export const constantRoutes = [
         name: 'Record',
         component: () => import('@/views/record'),
         meta: { title: 'Record', icon: 'record' }
+      },
+      {
+        path: 'record/create/:id(\\d+)',
+        name: 'RecordCreate',
+        component: () => import('@/views/record/RecordCreate'),
+        meta: { title: 'Record Create', noCache: true, activeMenu: '/record' },
+        hidden: true
+      },
+      {
+        path: 'record/edit/:id(\\d+)',
+        name: 'RecordEdit',
+        component: () => import('@/views/record/RecordEdit'),
+        meta: { title: 'Record Edit', noCache: true, activeMenu: '/record' },
+        hidden: true
+      },
+      {
+        path: 'record/:id(\\d+)',
+        name: 'RecordDetail',
+        component: () => import('@/views/record/RecordDetail'),
+        meta: { title: 'Record Detail', noCache: true, activeMenu: '/record' },
+        hidden: true
       }
     ]
   },
