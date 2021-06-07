@@ -55,6 +55,20 @@ export const constantRoutes = [
         meta: { title: 'Record', icon: 'record' }
       }
     ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/profile',
+    hidden: true,
+    children: [
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/profile'),
+        meta: { title: 'Profile', noCache: true }
+      }
+    ]
   }
 ]
 
