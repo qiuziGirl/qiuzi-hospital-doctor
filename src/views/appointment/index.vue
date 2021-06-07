@@ -151,6 +151,10 @@ export default {
       this.listLoading = true
       this.listQuery.doctorId = this.doctorId
 
+      if (this.listQuery.status === '') {
+        this.listQuery.status = null
+      }
+
       try {
         const { total, appointments } = await $api.appointment.getAppointmentList(this.listQuery)
 
