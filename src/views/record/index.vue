@@ -124,6 +124,10 @@ export default {
       this.listLoading = true
       this.listQuery.doctorId = this.doctorId
 
+      if (this.listQuery.change === '') {
+        this.listQuery.change = null
+      }
+
       try {
         const { records, total } = await $api.record.getRecordList(this.listQuery)
         this.total = total
